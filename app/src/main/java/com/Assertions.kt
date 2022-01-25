@@ -20,7 +20,7 @@ class Assertions {
     //esta funcion si el usuario = a nulo
     //suponer que hay una sobrecarga de metodos
     //? posiblemente sea null = que sera por defecto un nulo
-    fun checkHuman(user: User? = null): Boolean?  {
+    fun checkHuman(user: User? = null): Boolean? {
         if (user == null) return null
         //en caso de que no sea nulo
         //retornara por defecto un humano

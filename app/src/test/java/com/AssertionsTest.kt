@@ -13,4 +13,13 @@ class AssertionsTest{
         //val array = arrayOf(21, 11)//valor esperado
         assertArrayEquals("Mensaje personalizado de error test",array, assertions.getLuckNumbers())
     }
+
+    @Test
+    fun getNameTest(){
+        val assertions = Assertions()
+        val name = "Cristian"
+        val otroname = "Alain"
+        assertEquals(name, assertions.getName())
+        assertNotEquals(otroname, assertions.getName())
+    }
 }
