@@ -63,6 +63,22 @@ class AssertionsTest{
         assertNotNull(assertions.checkHuman(user))
     }
 
+    //no es igual
+    @Test
+    fun checkNotSameTest(){
+        val juan = User("8bit",1, false)
+        val arturo = User("Juan",18, true)
+        assertNotSame(juan, arturo)
+    }
+
+    //Es igual
+    @Test
+    fun checkSameTest(){
+        val juan = User("8bit",1, false)
+        val ju = User("8bit",1, false)
+        val copiJuan = juan
+        assertSame(juan, copiJuan)
+    }
 
 
 
