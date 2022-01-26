@@ -36,4 +36,6 @@ class Assertions {
         //en caso de que no se alique !user.isHuman se retornar por defecto ususario mayor o igual a 18
         return user.age >= 18
     }
+
+
 }
