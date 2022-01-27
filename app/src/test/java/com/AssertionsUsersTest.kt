@@ -1,5 +1,6 @@
 package com
 
+import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 
@@ -20,6 +21,15 @@ class AssertionsUsersTest {
     fun setup() {
         bot = User("64 bits", 1, false)
         juan = User("Juan", 18, true)
+        println("Before")
+    }
+
+    //todo @After complemento para nuestras pruebas
+    @After
+    fun tearDown(){
+        bot = User("64 bits", 1, false)
+        juan = User("Juan", 18, true)
+        println("After")
     }
 
     @Test//Nos aseguramos que todos los nombramientos terminen en Test
@@ -27,6 +37,7 @@ class AssertionsUsersTest {
         val assertions = Assertions()
         assertFalse(assertions.checkHuman(bot))
         assertTrue(assertions.checkHuman(juan))
+        println("checkHuman")
     }
 
     //funcion validar que no es nulo (assertNotNull)
@@ -38,6 +49,7 @@ class AssertionsUsersTest {
         //prueba instanciando el metodo checkHuman para validar que no es nulo
         val assertions = Assertions()
         assertNotNull(assertions.checkHuman(juan))
+        println("checkNotNull")
     }
 
 }
