@@ -1,17 +1,33 @@
 package com
 
-import org.junit.After
+import org.junit.*
 import org.junit.Assert.*
-import org.junit.Before
-
-import org.junit.Test
 
 class AssertionsUsersTest {
 
-
     // De tipo User
     private lateinit var bot: User
-    private lateinit var juan: User
+
+
+    companion object {
+        private lateinit var juan: User
+        //todo @BeforeClass complemento para nuestras pruebas quedaria al inicia y de todas las prubas.
+        @BeforeClass
+        @JvmStatic
+        fun setupCommon() {
+            juan = User("Juan", 18, true)
+            println("BeforeClass")
+        }
+
+        //todo @AfterClass complemento para nuestras pruebas quedaria despues que se ejecute todas las prubas
+        @AfterClass
+        @JvmStatic
+        fun tearDownCommon() {
+            juan = User("Juan", 18, true)
+            println("AfterClass")
+        }
+
+    }
 
     //todo @Before complemento para nuestras pruebas
     //Esta se va ejecutar antes de cada prueba
@@ -20,15 +36,13 @@ class AssertionsUsersTest {
     @Before
     fun setup() {
         bot = User("64 bits", 1, false)
-        juan = User("Juan", 18, true)
         println("Before")
     }
 
     //todo @After complemento para nuestras pruebas
     @After
-    fun tearDown(){
+    fun tearDown() {
         bot = User("64 bits", 1, false)
-        juan = User("Juan", 18, true)
         println("After")
     }
 
@@ -42,7 +56,7 @@ class AssertionsUsersTest {
 
     //funcion validar que no es nulo (assertNotNull)
     @Test
-    fun checkNotNullUserTest(){
+    fun checkNotNullUserTest() {
         assertNotNull(juan)
         //prueba simple con assertNotNull.
         //----------------------
@@ -50,6 +64,25 @@ class AssertionsUsersTest {
         val assertions = Assertions()
         assertNotNull(assertions.checkHuman(juan))
         println("checkNotNull")
+    }
+
+    //no es igual
+    @Test
+    fun checkNotSameTest() {
+        val juan = User("8bit", 1, false)
+        val arturo = User("Juan", 18, true)
+        assertNotSame(juan, arturo)
+        println("checkNotSame")
+    }
+
+    //Es igual
+    @Test
+    fun checkSameTest() {
+        val juan = User("8bit", 1, false)
+        val ju = User("8bit", 1, false)
+        val copiJuan = juan
+        assertSame(juan, copiJuan)
+        println("checkSame")
     }
 
 }
