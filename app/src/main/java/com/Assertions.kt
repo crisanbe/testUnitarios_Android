@@ -2,6 +2,11 @@ package com
 
 class Assertions {
     private val user = User("Cristian", 32)
+    private var location = "US"
+
+    fun setLocation(location: String){
+        this.location = location
+    }
 
     fun getLuckNumbers(): Array<Int> {//retornamos un array de tipo entero
         return arrayOf(21, 117)
@@ -32,7 +37,8 @@ class Assertions {
     fun isAdult(user: User): Boolean {
         //si no es humano
         if (!user.isHuman) return true
-
+         return if (location == "US") user.age >=21
+        else
         //en caso de que no se alique !user.isHuman se retornar por defecto ususario mayor o igual a 18
         return user.age >= 18
     }

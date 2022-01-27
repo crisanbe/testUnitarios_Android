@@ -11,6 +11,7 @@ class AssertionsUsersTest {
 
     companion object {
         private lateinit var juan: User
+
         //todo @BeforeClass complemento para nuestras pruebas quedaria al inicia y de todas las prubas.
         @BeforeClass
         @JvmStatic
