@@ -1,5 +1,7 @@
-package com
+package com.example.fundamentosjunit
 
+import com.Assertions
+import com.User
 import org.junit.Assert.*
 import org.junit.Test
 import kotlin.random.Random

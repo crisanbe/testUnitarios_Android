@@ -1,5 +1,7 @@
-package com
+package com.example.fundamentosjunit
 
+import com.Assertions
+import com.User
 import org.junit.*
 import org.junit.Assert.*
 

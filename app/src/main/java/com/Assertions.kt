@@ -17,7 +17,6 @@ class Assertions {
         return user.name
     }
 
-
     fun checkHuman(user: User): Boolean {
         return user.isHuman
     }
@@ -37,7 +36,7 @@ class Assertions {
     fun isAdult(user: User): Boolean {
         //si no es humano
         if (!user.isHuman) return true
-         return if (location == "US") user.age >=21
+        return if (location == "US") user.age >=21
         else
         //en caso de que no se alique !user.isHuman se retornar por defecto ususario mayor o igual a 18
         return user.age >= 18
