@@ -14,6 +14,7 @@ En el parquete (test) es donde vamos a realizar nuestras pruebas unitarias
 Por qué?
 Bueno, porque aquí es donde vamos a meter todas las pruebas que no requieran que el emulador funcione o el dispositivo.
 Es decir, cuando únicamente tenemos código que funciona a base de Kotlin o alguna dependencia que no requiera una interfaz gráfica para funcionar.
-![image](https://user-images.githubusercontent.com/55001756/152684115-f953bd7c-4e5d-4729-80ae-aa42d25f9fa6.png)
+
+#![image](https://user-images.githubusercontent.com/55001756/152684115-f953bd7c-4e5d-4729-80ae-aa42d25f9fa6.png)
 
 
